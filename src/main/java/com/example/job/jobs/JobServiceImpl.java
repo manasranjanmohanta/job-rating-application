@@ -21,4 +21,14 @@ public class JobServiceImpl implements JobService {
         jobList.add(job);
         return "Job added successfully";
     }
+
+    @Override
+    public Job getJobById(Long id) {
+        for (Job job : jobList) {
+            if (job.getId().equals(id)) {
+                return job;
+            }
+        }
+        return null;
+    }
 }
